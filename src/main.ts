@@ -7,7 +7,7 @@ import { AppModule } from './app.module';
  * Función principal que inicializa la aplicación NestJS
  * Configura pipes de validación, CORS, Swagger y puerto de escucha
  */
-async function bootstrap() {
+export async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   // Configurar CORS
@@ -55,11 +55,19 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
-  const port = process.env.PORT || 3000;
-  await app.listen(port);
-  
-  console.log(`🚀 Application is running on: http://localhost:${port}`);
-  console.log(`📚 Swagger documentation: http://localhost:${port}/api`);
+  // Solo escuchar en puerto si no estamos en Vercel
+  if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+    const port = process.env.PORT || 3000;
+    await app.listen(port);
+    
+    console.log(`🚀 Application is running on: http://localhost:${port}`);
+    console.log(`📚 Swagger documentation: http://localhost:${port}/api`);
+  }
+
+  return app;
 }
 
-bootstrap();
+// Solo ejecutar bootstrap si no estamos en Vercel
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  bootstrap();
+}

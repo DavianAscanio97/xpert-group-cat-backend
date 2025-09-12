@@ -1,57 +1,13 @@
-const { NestFactory } = require('@nestjs/core');
-const { ValidationPipe } = require('@nestjs/common');
-const { SwaggerModule, DocumentBuilder } = require('@nestjs/swagger');
+// Importar el main.js compilado de NestJS
+const { bootstrap } = require('../dist/main');
 
 let app;
 
 async function createApp() {
   if (!app) {
     try {
-      // Importar el módulo compilado
-      const { AppModule } = require('../dist/app.module');
-      
-      app = await NestFactory.create(AppModule);
-      
-      // Configurar CORS
-      app.enableCors({
-        origin: [
-          'http://localhost:4200',
-          'http://127.0.0.1:4200',
-          /^https:\/\/.*\.vercel\.app$/,
-          /^https:\/\/.*\.vercel\.dev$/
-        ],
-        methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-        allowedHeaders: [
-          'Content-Type', 
-          'Authorization', 
-          'X-Requested-With',
-          'Accept',
-          'Origin'
-        ],
-        credentials: true,
-      });
-
-      // Configurar pipe de validación global
-      app.useGlobalPipes(
-        new ValidationPipe({
-          whitelist: true,
-          forbidNonWhitelisted: true,
-          transform: true,
-        }),
-      );
-
-      // Configurar Swagger
-      const config = new DocumentBuilder()
-        .setTitle('Cats API')
-        .setDescription('API para gestión de gatos usando TheCatAPI')
-        .setVersion('1.0')
-        .addBearerAuth()
-        .build();
-      
-      const document = SwaggerModule.createDocument(app, config);
-      SwaggerModule.setup('api', app, document);
-
-      await app.init();
+      // Usar la función bootstrap del main.js
+      app = await bootstrap();
     } catch (error) {
       console.error('Error creating app:', error);
       throw error;
