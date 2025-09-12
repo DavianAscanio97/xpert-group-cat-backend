@@ -166,9 +166,9 @@ npm run test:e2e
 ## 🤝 Contribución
 
 1. Fork el proyecto
-2. Crear una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
+2. Crear una rama para tu feature (`git checkout -b https://github.com/DavianAscanio97/xpert-group-cat-backend`)
+3. Commit tus cambios (`git commit -m 'agregar mesnaje'`)
+4. Push a la rama (`git push origin feature/clonar`)
 5. Abrir un Pull Request
 
 ## 📄 Licencia
