@@ -50,6 +50,12 @@ export async function bootstrap() {
       persistAuthorization: true,
     },
     customSiteTitle: 'Cats API Documentation',
+    customCss: '.swagger-ui .topbar { display: none }',
+    customJs: [
+      'https://unpkg.com/swagger-ui-dist@4.15.5/swagger-ui-bundle.js',
+      'https://unpkg.com/swagger-ui-dist@4.15.5/swagger-ui-standalone-preset.js'
+    ],
+    customCssUrl: 'https://unpkg.com/swagger-ui-dist@4.15.5/swagger-ui.css',
   });
 
   // Solo escuchar en puerto si no estamos en Vercel
