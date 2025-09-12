@@ -19,7 +19,10 @@ async function bootstrap() {
       'http://127.0.0.1:4200',
       // Permitir cualquier puerto de localhost en desarrollo
       /^http:\/\/localhost(\:\d+)?$/,
-      /^http:\/\/127\.0\.0\.1(\:\d+)?$/
+      /^http:\/\/127\.0\.0\.1(\:\d+)?$/,
+      // Permitir dominios de Vercel
+      /^https:\/\/.*\.vercel\.app$/,
+      /^https:\/\/.*\.vercel\.dev$/
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     allowedHeaders: [
