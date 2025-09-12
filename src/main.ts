@@ -45,7 +45,12 @@ export async function bootstrap() {
     .build();
   
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api', app, document);
+  SwaggerModule.setup('api', app, document, {
+    swaggerOptions: {
+      persistAuthorization: true,
+    },
+    customSiteTitle: 'Cats API Documentation',
+  });
 
   // Solo escuchar en puerto si no estamos en Vercel
   if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
