@@ -63,3 +63,18 @@ export async function bootstrap() {
 if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
   bootstrap();
 }
+
+// Exportar para Vercel
+module.exports = async (req, res) => {
+  try {
+    const app = await bootstrap();
+    const handler = app.getHttpAdapter().getInstance();
+    return handler(req, res);
+  } catch (error) {
+    console.error('Error in serverless function:', error);
+    res.status(500).json({ 
+      error: 'Internal Server Error', 
+      message: error.message
+    });
+  }
+};
