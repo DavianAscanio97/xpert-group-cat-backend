@@ -7,8 +7,8 @@
   "license": "MIT",
   "scripts": {
     "build": "nest build",
-    "build:vercel": "nest build && npm run vercel-build",
-    "vercel-build": "echo 'Build completed for Vercel'",
+    "build:vercel": "nest build",
+    "vercel-build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
