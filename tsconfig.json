@@ -17,5 +17,25 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@/auth/*": [
+        "src/auth/*"
+      ],
+      "@/cats/*": [
+        "src/cats/*"
+      ],
+      "@/images/*": [
+        "src/images/*"
+      ],
+      "@/users/*": [
+        "src/users/*"
+      ],
+      "@/common/*": [
+        "src/common/*"
+      ]
+    }
   }
 }
