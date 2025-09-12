@@ -2,26 +2,17 @@
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
-      "use": "vercel-sapper"
-    },
-    {
-      "src": "src/main.ts",
+      "src": "index.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "src/main.ts",
-      "methods": [
-        "GET",
-        "POST",
-        "PUT",
-        "DELETE",
-        "PATCH",
-        "OPTIONS"
-      ]
+      "dest": "/index.js"
     }
-  ]
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
 }

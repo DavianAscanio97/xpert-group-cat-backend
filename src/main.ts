@@ -12,25 +12,17 @@ export async function bootstrap() {
 
   // Configurar CORS
   app.enableCors({
-    origin: [
-      'http://localhost',
-      'http://localhost:4200',
-      'http://127.0.0.1',
-      'http://127.0.0.1:4200',
-      // Permitir cualquier puerto de localhost en desarrollo
-      /^http:\/\/localhost(\:\d+)?$/,
-      /^http:\/\/127\.0\.0\.1(\:\d+)?$/,
-      // Permitir dominios de Vercel
-      /^https:\/\/.*\.vercel\.app$/,
-      /^https:\/\/.*\.vercel\.dev$/
-    ],
+    origin: true, // Permitir todos los orígenes temporalmente
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     allowedHeaders: [
       'Content-Type', 
       'Authorization', 
       'X-Requested-With',
       'Accept',
-      'Origin'
+      'Origin',
+      'Access-Control-Allow-Origin',
+      'Access-Control-Allow-Headers',
+      'Access-Control-Allow-Methods'
     ],
     credentials: true,
   });
