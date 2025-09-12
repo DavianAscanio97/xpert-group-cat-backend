@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 
-import { UsersService } from '@/users/users.service';
-import { LoginUserDto } from '@/users/dto/login-user.dto';
-import { CreateUserDto } from '@/users/dto/create-user.dto';
-import { AuthResponseDto } from '@/auth/dto/auth-response.dto';
+import { UsersService } from '../users/users.service';
+import { LoginUserDto } from '../users/dto/login-user.dto';
+import { CreateUserDto } from '../users/dto/create-user.dto';
+import { AuthResponseDto } from './dto/auth-response.dto';
 
 /**
  * Servicio de autenticación

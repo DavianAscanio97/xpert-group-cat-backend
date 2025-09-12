@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { HttpModule } from '@nestjs/axios';
 
-import { CatsController } from '@/cats/cats.controller';
-import { CatsService } from '@/cats/cats.service';
+import { CatsController } from './cats.controller';
+import { CatsService } from './cats.service';
 
 /**
  * Módulo de gatos
