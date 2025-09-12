@@ -1,11 +1,11 @@
 import { Controller, Post, Body, Get, UseGuards, Request } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse, ApiBearerAuth } from '@nestjs/swagger';
 
-import { AuthService } from '@/auth/auth.service';
-import { LoginUserDto } from '@/users/dto/login-user.dto';
-import { CreateUserDto } from '@/users/dto/create-user.dto';
-import { AuthResponseDto } from '@/auth/dto/auth-response.dto';
-import { JwtAuthGuard } from '@/auth/guards/jwt-auth.guard';
+import { AuthService } from './auth.service';
+import { LoginUserDto } from '../users/dto/login-user.dto';
+import { CreateUserDto } from '../users/dto/create-user.dto';
+import { AuthResponseDto } from './dto/auth-response.dto';
+import { JwtAuthGuard } from './guards/jwt-auth.guard';
 
 /**
  * Controlador de autenticación

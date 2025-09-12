@@ -3,10 +3,10 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import * as bcrypt from 'bcrypt';
 
-import { User, UserDocument } from '@/users/schemas/user.schema';
-import { CreateUserDto } from '@/users/dto/create-user.dto';
-import { LoginUserDto } from '@/users/dto/login-user.dto';
-import { UserResponseDto } from '@/users/dto/user-response.dto';
+import { User, UserDocument } from './schemas/user.schema';
+import { CreateUserDto } from './dto/create-user.dto';
+import { LoginUserDto } from './dto/login-user.dto';
+import { UserResponseDto } from './dto/user-response.dto';
 
 /**
  * Servicio para la gestión de usuarios

@@ -1,8 +1,8 @@
 import { Controller, Get, Param, Query } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse, ApiParam, ApiQuery } from '@nestjs/swagger';
 
-import { CatsService } from '@/cats/cats.service';
-import { BreedQueryDto } from '@/cats/dto/breed-query.dto';
+import { CatsService } from './cats.service';
+import { BreedQueryDto } from './dto/breed-query.dto';
 
 /**
  * Controlador para la gestión de razas de gatos

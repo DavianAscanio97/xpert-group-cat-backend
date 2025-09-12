@@ -4,8 +4,8 @@ import { ConfigService } from '@nestjs/config';
 import { HttpException } from '@nestjs/common';
 import { of, throwError } from 'rxjs';
 
-import { CatsService } from '@/cats/cats.service';
-import { BreedQueryDto } from '@/cats/dto/breed-query.dto';
+import { CatsService } from './cats.service';
+import { BreedQueryDto } from './dto/breed-query.dto';
 
 /**
  * Pruebas unitarias para el servicio de gatos

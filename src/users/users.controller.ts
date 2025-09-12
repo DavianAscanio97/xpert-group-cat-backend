@@ -1,10 +1,10 @@
 import { Controller, Get, Post, Body, Param, Delete, UseGuards } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse, ApiBearerAuth } from '@nestjs/swagger';
 
-import { UsersService } from '@/users/users.service';
-import { CreateUserDto } from '@/users/dto/create-user.dto';
-import { UserResponseDto } from '@/users/dto/user-response.dto';
-import { JwtAuthGuard } from '@/auth/guards/jwt-auth.guard';
+import { UsersService } from './users.service';
+import { CreateUserDto } from './dto/create-user.dto';
+import { UserResponseDto } from './dto/user-response.dto';
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 
 /**
  * Controlador para la gestión de usuarios

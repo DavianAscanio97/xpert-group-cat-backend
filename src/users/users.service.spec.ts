@@ -3,10 +3,10 @@ import { getModelToken } from '@nestjs/mongoose';
 import { ConflictException, UnauthorizedException } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 
-import { UsersService } from '@/users/users.service';
-import { User } from '@/users/schemas/user.schema';
-import { CreateUserDto } from '@/users/dto/create-user.dto';
-import { LoginUserDto } from '@/users/dto/login-user.dto';
+import { UsersService } from './users.service';
+import { User } from './schemas/user.schema';
+import { CreateUserDto } from './dto/create-user.dto';
+import { LoginUserDto } from './dto/login-user.dto';
 
 /**
  * Pruebas unitarias para el servicio de usuarios

@@ -1,8 +1,8 @@
 import { Controller, Get, Param, Query } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse, ApiParam, ApiQuery } from '@nestjs/swagger';
 
-import { ImagesService } from '@/images/images.service';
-import { ImageQueryDto } from '@/images/dto/image-query.dto';
+import { ImagesService } from './images.service';
+import { ImageQueryDto } from './dto/image-query.dto';
 
 /**
  * Controlador para la gestión de imágenes de gatos

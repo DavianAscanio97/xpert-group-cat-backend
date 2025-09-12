@@ -3,7 +3,7 @@ import { HttpService } from '@nestjs/axios';
 import { ConfigService } from '@nestjs/config';
 import { firstValueFrom } from 'rxjs';
 
-import { BreedQueryDto } from '@/cats/dto/breed-query.dto';
+import { BreedQueryDto } from './dto/breed-query.dto';
 
 /**
  * Servicio para la gestión de razas de gatos

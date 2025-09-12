@@ -3,7 +3,7 @@ import { HttpService } from '@nestjs/axios';
 import { ConfigService } from '@nestjs/config';
 import { firstValueFrom } from 'rxjs';
 
-import { ImageQueryDto } from '@/images/dto/image-query.dto';
+import { ImageQueryDto } from './dto/image-query.dto';
 
 /**
  * Servicio para la gestión de imágenes de gatos
