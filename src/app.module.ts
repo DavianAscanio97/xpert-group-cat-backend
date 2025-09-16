@@ -4,7 +4,6 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 
-import { AppController } from './app.controller';
 import { CatsModule } from './cats/cats.module';
 import { ImagesModule } from './images/images.module';
 import { UsersModule } from './users/users.module';
@@ -15,7 +14,7 @@ import { AuthModule } from './auth/auth.module';
  * Configura todos los módulos necesarios, base de datos y autenticación
  */
 @Module({
-  controllers: [AppController],
+  controllers: [],
   imports: [
     // Configuración de variables de entorno
     ConfigModule.forRoot({
